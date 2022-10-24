@@ -138,7 +138,14 @@ public final class AISearch extends Frame {
 
         // incorpora los elementos al dialog
         DAbout.add(new Label(""));
-        DAbout.add(new Label(" AI-Search Algorithm Animation Software"));
+        DAbout.add(new Label(
+                " AI-Search Algorithm Animation Software By Nhom 10 :"));
+        DAbout.add(new Label(""));
+        DAbout.add(new Label("          Tran Dang Quyet"));
+        DAbout.add(new Label(""));
+        DAbout.add(new Label("          Tran Van Thai"));
+        DAbout.add(new Label(""));
+        DAbout.add(new Label("          Nguyen Huu Hieu"));
         DAbout.add(new Label(""));
         DAbout.add(new Label(""));
 
@@ -256,9 +263,11 @@ public final class AISearch extends Frame {
 
     class ControladorChoice implements ItemListener {
         Choice c;
+
         ControladorChoice(Choice cp) {
             c = cp;
         }
+
         @Override
         public void itemStateChanged(ItemEvent evt) {
             // resetea el grafo y los algoritmos
@@ -273,7 +282,8 @@ public final class AISearch extends Frame {
             switch (c.getSelectedIndex()) {
                 case 0:
                     bfs = new BreadthFirstSearch(grafo);
-                    TAInformation.append("\n" + (new Date()).toString() + ": Breadth-First Search algorithm selected.\n");
+                    TAInformation
+                            .append("\n" + (new Date()).toString() + ": Breadth-First Search algorithm selected.\n");
                     break;
                 case 1:
                     dfs = new DepthFirstSearch(grafo);
@@ -281,11 +291,13 @@ public final class AISearch extends Frame {
                     break;
                 case 2:
                     shc = new SimpleHillClimbing(grafo);
-                    TAInformation.append("\n" + (new Date()).toString() + ": Simple Hill Climbing algorithm selected.\n");
+                    TAInformation
+                            .append("\n" + (new Date()).toString() + ": Simple Hill Climbing algorithm selected.\n");
                     break;
                 case 3:
                     sahc = new SteepestAscentHillClimbing(grafo);
-                    TAInformation.append("\n" + (new Date()).toString() + ": Steepest Ascent Hill Climbing algorithm selected.\n");
+                    TAInformation.append(
+                            "\n" + (new Date()).toString() + ": Steepest Ascent Hill Climbing algorithm selected.\n");
                     break;
                 case 4:
                     bf = new BestFirstSearch(grafo);
@@ -409,7 +421,8 @@ public final class AISearch extends Frame {
                             if (!dfs.step()) {
                                 // muestra estatidsticas
                                 estadisticas = grafo.getEstadisticas();
-                                TAInformation.append((new Date()).toString() + ": Depth-First Search algorithm stadistics.\n");
+                                TAInformation.append(
+                                        (new Date()).toString() + ": Depth-First Search algorithm stadistics.\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[0] + "\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[1] + "\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[2] + "\n");
@@ -421,7 +434,8 @@ public final class AISearch extends Frame {
                             dfs.run();
                             // muestra estatidsticas
                             estadisticas = grafo.getEstadisticas();
-                            TAInformation.append((new Date()).toString() + ": Depth-First Search algorithm stadistics.\n");
+                            TAInformation
+                                    .append((new Date()).toString() + ": Depth-First Search algorithm stadistics.\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[0] + "\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[1] + "\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[2] + "\n");
@@ -435,7 +449,8 @@ public final class AISearch extends Frame {
                             if (!shc.step()) {
                                 // muestra estatidsticas
                                 estadisticas = grafo.getEstadisticas();
-                                TAInformation.append((new Date()).toString() + ": Simple Hill Climbing algorithm stadistics.\n");
+                                TAInformation.append(
+                                        (new Date()).toString() + ": Simple Hill Climbing algorithm stadistics.\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[0] + "\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[1] + "\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[2] + "\n");
@@ -447,7 +462,8 @@ public final class AISearch extends Frame {
                             shc.run();
                             // muestra estatidsticas
                             estadisticas = grafo.getEstadisticas();
-                            TAInformation.append((new Date()).toString() + ": Simple Hill Climbing algorithm stadistics.\n");
+                            TAInformation
+                                    .append((new Date()).toString() + ": Simple Hill Climbing algorithm stadistics.\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[0] + "\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[1] + "\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[2] + "\n");
@@ -497,7 +513,8 @@ public final class AISearch extends Frame {
                             if (!bf.step()) {
                                 // muestra estatidsticas
                                 estadisticas = grafo.getEstadisticas();
-                                TAInformation.append((new Date()).toString() + ": Best First Search algorithm stadistics.\n");
+                                TAInformation.append(
+                                        (new Date()).toString() + ": Best First Search algorithm stadistics.\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[0] + "\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[1] + "\n");
                                 TAInformation.append((new Date()).toString() + ": " + estadisticas[2] + "\n");
@@ -509,7 +526,8 @@ public final class AISearch extends Frame {
                             bf.run();
                             // muestra estatidsticas
                             estadisticas = grafo.getEstadisticas();
-                            TAInformation.append((new Date()).toString() + ": Best First Search algorithm stadistics.\n");
+                            TAInformation
+                                    .append((new Date()).toString() + ": Best First Search algorithm stadistics.\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[0] + "\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[1] + "\n");
                             TAInformation.append((new Date()).toString() + ": " + estadisticas[2] + "\n");
@@ -560,15 +578,18 @@ public final class AISearch extends Frame {
                 switch (CSearch.getSelectedIndex()) {
                     case 0:
                         bfs.reset();
-                        TAInformation.append("\n" + (new Date()).toString() + ": Breadth-First Search algorithm restarted.\n");
+                        TAInformation.append(
+                                "\n" + (new Date()).toString() + ": Breadth-First Search algorithm restarted.\n");
                         break;
                     case 1:
                         dfs.reset();
-                        TAInformation.append("\n" + (new Date()).toString() + ": Depth-First Search algorithm restarted.\n");
+                        TAInformation
+                                .append("\n" + (new Date()).toString() + ": Depth-First Search algorithm restarted.\n");
                         break;
                     case 2:
                         shc.reset();
-                        TAInformation.append("\n" + (new Date()).toString() + ": Simple Hill Climbing algorithm restarted.\n");
+                        TAInformation.append(
+                                "\n" + (new Date()).toString() + ": Simple Hill Climbing algorithm restarted.\n");
                         break;
                     case 3:
                         sahc.reset();
@@ -577,7 +598,8 @@ public final class AISearch extends Frame {
                         break;
                     case 4:
                         bf.reset();
-                        TAInformation.append("\n" + (new Date()).toString() + ": Best First Search algorithm restarted.\n");
+                        TAInformation
+                                .append("\n" + (new Date()).toString() + ": Best First Search algorithm restarted.\n");
                         break;
                     case 5:
                         ae.reset();

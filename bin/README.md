@@ -23,7 +23,7 @@ Animation software for algorithms Artificial Intelligence
 Clone
 
 ```
-git clone https://github.com/humbertodias/java-ai-search-algorithms.git
+git clone https://github.com/quyet12308/AI_java
 ```
 
 Inside the folder
